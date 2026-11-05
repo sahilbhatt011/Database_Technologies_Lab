@@ -1,3 +1,6 @@
-/* Full Question: Employee and Department IDs Use INNER JOIN to display EmpID, EmpName, DeptID, and DeptName. */
+/* Full Question: Create a stored procedure named ShowDepartments to display all records from the Department table. */
 
-SELECT e.EmpID,e.EmpName,e.DeptID,d.DeptName FROM Employees e INNER JOIN Departments d ON e.DeptID=d.DeptID;
+DELIMITER //
+CREATE PROCEDURE ShowDepartments() BEGIN SELECT * FROM Department; END //
+DELIMITER ;
+CALL ShowDepartments();

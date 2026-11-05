@@ -1,3 +1,6 @@
-/* Full Question: Computer Science Find all employees belonging to Computer Science using an equality-based INNER JOIN. */
+/* Full Question: Create a stored procedure named TotalStudents that calculates and displays the total number of students in the Student table. */
 
-SELECT e.* FROM Employees e JOIN Departments d ON e.DeptID=d.DeptID WHERE d.DeptName='Computer Science';
+DELIMITER //
+CREATE PROCEDURE TotalStudents() BEGIN SELECT COUNT(*) AS total_students FROM Student; END //
+DELIMITER ;
+CALL TotalStudents();

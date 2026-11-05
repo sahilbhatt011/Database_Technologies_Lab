@@ -1,3 +1,6 @@
-/* Full Question: Theta Join – Greater Than or Equal Display employee name, salary, and grade where employee salary is >= the grade minimum. */
+/* Full Question: Create a function named AddTwoNumbers that accepts two integers and returns their sum. Test it with 10 and 20. */
 
-SELECT e.EmpName,e.Salary,g.Grade FROM Employees e JOIN SalaryGrades g ON e.Salary>=g.MinSalary;
+DELIMITER //
+CREATE FUNCTION AddTwoNumbers(a INT,b INT) RETURNS INT DETERMINISTIC RETURN a+b //
+DELIMITER ;
+SELECT AddTwoNumbers(10,20);

@@ -1,3 +1,6 @@
-/* Full Question: Average Salary Use INNER JOIN and GROUP BY to calculate average salary for each matched department. */
+/* Full Question: Create a function named HigherNumber that accepts two integers and returns the greater number. */
 
-SELECT d.DeptName,COUNT(*) AS employee_count FROM Employees e JOIN Departments d ON e.DeptID=d.DeptID GROUP BY d.DeptName;
+DELIMITER //
+CREATE FUNCTION HigherNumber(a INT,b INT) RETURNS INT DETERMINISTIC RETURN GREATEST(a,b) //
+DELIMITER ;
+SELECT HigherNumber(10,20);

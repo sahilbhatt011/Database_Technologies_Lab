@@ -1,3 +1,6 @@
-/* Full Question: DISTINCT Departments Display dis nct department names that have at least one matching employee. */
+/* Full Question: Create a function named AgeCategory that accepts age and returns Adult if age is 18 or above; otherwise return Minor. */
 
-SELECT e.EmpName,d.DeptName,e.Salary FROM Employees e JOIN Departments d ON e.DeptID=d.DeptID ORDER BY e.Salary DESC;
+DELIMITER //
+CREATE FUNCTION AgeCategory(a INT) RETURNS VARCHAR(10) DETERMINISTIC RETURN IF(a>=18,'Adult','Minor') //
+DELIMITER ;
+SELECT AgeCategory(20);

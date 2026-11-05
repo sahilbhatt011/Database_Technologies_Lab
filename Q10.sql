@@ -1,3 +1,6 @@
-/* Full Question: Theta Join – Less Than Display employee names and salary grades where employee salary is less than the grade maximum salary. */
+/* Full Question: Create a stored procedure named StudentsBetweenMarks that accepts two marks values and displays students whose marks are between the two values. Test it using 70 and 90. */
 
-SELECT e.EmpName,e.Salary,g.Grade FROM Employees e JOIN SalaryGrades g ON e.Salary<g.MaxSalary;
+DELIMITER //
+CREATE PROCEDURE StudentsBetweenMarks(IN p_low DECIMAL(5,2), IN p_high DECIMAL(5,2)) BEGIN SELECT * FROM Student WHERE Marks BETWEEN p_low AND p_high; END //
+DELIMITER ;
+CALL StudentsBetweenMarks(70,90);

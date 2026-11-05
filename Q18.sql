@@ -1,3 +1,6 @@
-/* Full Question: HAVING Show departments whose average employee salary is greater than 60000. */
+/* Full Question: Create a function named DoubleMarks that accepts marks and returns twice the marks. */
 
-SELECT d.DeptName,AVG(e.Salary) AS average_salary FROM Employees e JOIN Departments d ON e.DeptID=d.DeptID GROUP BY d.DeptName;
+DELIMITER //
+CREATE FUNCTION DoubleMarks(m DECIMAL(5,2)) RETURNS DECIMAL(6,2) DETERMINISTIC RETURN m*2 //
+DELIMITER ;
+SELECT DoubleMarks(75);

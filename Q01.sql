@@ -1,3 +1,6 @@
-/* Full Question: Basic Inner Join Display employee names, department names, and department loca ons for employees with matching departments. */
+/* Full Question: Create a stored procedure named ShowStudents to display all records from the Student table. */
 
-SELECT e.EmpName,d.DeptName,d.Location FROM Employees e INNER JOIN Departments d ON e.DeptID=d.DeptID;
+DELIMITER //
+CREATE PROCEDURE ShowStudents() BEGIN SELECT * FROM Student; END //
+DELIMITER ;
+CALL ShowStudents();

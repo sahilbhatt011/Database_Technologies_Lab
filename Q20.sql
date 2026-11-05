@@ -1,3 +1,3 @@
-/* Full Question: IN Condi on Display employees working in either Computer Science or Pharmacy. */
+/* Full Question: Using the StudentGrade() function, write a SELECT query to display StudentName, Marks and Grade for every student in the Student table. */
 
-SELECT e.EmpName,d.DeptName,e.Salary FROM Employees e JOIN Departments d ON e.DeptID=d.DeptID ORDER BY e.Salary DESC LIMIT 1;
+SELECT StudentName,Marks,StudentGrade(Marks) AS Grade FROM Student;

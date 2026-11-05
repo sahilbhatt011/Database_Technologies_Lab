@@ -1,3 +1,6 @@
-/* Full Question: Pharmacy Employees Use INNER JOIN and WHERE to display employees belonging to the Pharmacy department. */
+/* Full Question: Create a stored procedure named ShowCourses to display all records from the Course table. */
 
-SELECT e.* FROM Employees e INNER JOIN Departments d ON e.DeptID=d.DeptID WHERE d.DeptName='Pharmacy';
+DELIMITER //
+CREATE PROCEDURE ShowCourses() BEGIN SELECT * FROM Course; END //
+DELIMITER ;
+CALL ShowCourses();
